@@ -1,0 +1,60 @@
+{
+  "name": "prm-frontend-automation",
+  "version": "1.0.0",
+  "description": "Repository created in the article REST API Tests with Cypress",
+  "main": "index.js",
+  "files": [
+    "templates/",
+    "index.js"
+  ],
+  "scripts": {
+    "cy:open": "npx cypress open --browser chrome",
+    "test": "npm start & cypress run --browser chrome",
+    "e2e": "npx cypress run --browser chrome",
+    "test:linux": "npx cypress run --spec cypress/e2e/$npm_config_modul/**/* --browser chrome",
+    "test:windows": "npx cypress run --spec cypress/e2e/%npm_config_modul%/**/**/* --browser firefox",
+    "prettier": "prettier --write ./cypress/**/*.js --config ./.prettierrc",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+http://gitlab.kalbenutritionals.com/shp/it/qa/PRM-Frontend-automation.git"
+  },
+  "keywords": [
+    "cypress",
+    "cypress-boilerplate",
+    "cypress-template",
+    "boilerplate",
+    "template"
+  ],
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "cypress": "^12.17.4",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "cypress-plugin-tab": "^1.0.5",
+    "cypress-xpath": "^2.0.1",
+    "eslint": "^8.46.0",
+    "eslint-plugin-cypress": "^2.13.3",
+    "faker": "^6.6.6",
+    "husky": "^8.0.3",
+    "install": "^0.13.0",
+    "prettier": "3.0.1",
+    "rimraf": "^5.0.1",
+    "webpack": "^5.88.2",
+    "webpack-preprocessor": "^0.1.12"
+  },
+  "dependencies": {
+    "@cypress/webpack-preprocessor": "^5.17.1",
+    "date-fns": "^2.30.0",
+    "reload": "^3.2.1",
+    "uuid": "^9.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "./husky/pre-commit",
+      "pre-push": "./husky/pre-push $HUSKY_GIT_STDIN"
+    }
+  }
+}
