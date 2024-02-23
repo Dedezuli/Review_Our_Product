@@ -12,10 +12,10 @@ export default {
   errorMessage: '.--Y-240',
   thankYouMessage: '[data-automation-id="thankYouMessage"]',
   saveBotton: '[data-automation-id="saveAndEditButton"]',
-  reportAbuse : '//a[contains(text(),"Report abuse")]',
+  reportAbuse: '//a[contains(text(),"Report abuse")]',
   phishing: '#Phishing',
-  contentInfringement : '#ContentInfringement',
-  otherabuse :'#Other',
-  comment : '.-_W-62',
-  submitAbuse : '//button[normalize-space()="Submit"]'
+  contentInfringement: '#ContentInfringement',
+  otherabuse: '#Other',
+  comment: '.-_W-62',
+  submitAbuse: '//button[normalize-space()="Submit"]'
 }

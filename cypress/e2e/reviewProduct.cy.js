@@ -102,7 +102,7 @@ describe('Review Product', () => {
     cy.get(reviewPage.date).dblclick().type(date)
     cy.get(reviewPage.submitButton).click().wait(2000)
     cy.get(reviewPage.validationError).should('be.visible').and('contain', 'Invalid input')
-   })
+  })
   it.skip('Review Product with alphabet input on Phone Number, should fail #notDeveloped', { retries: 2 }, () => {
     cy.get(reviewPage.headerPage).should('be.visible').wait(2000)
     cy.get(reviewPage.fullName).type(namePerson)
@@ -112,31 +112,39 @@ describe('Review Product', () => {
     cy.get(reviewPage.date).dblclick().type(date)
     cy.get(reviewPage.submitButton).click().wait(2000)
     cy.get(reviewPage.validationError).should('be.visible').and('contain', 'Invalid input')
-   })
-  it.skip('Review Product with less than minimum input on Phone Number, should fail #notDeveloped', { retries: 2 }, () => {
-    cy.get(reviewPage.headerPage).should('be.visible').wait(2000)
-    cy.get(reviewPage.fullName).type(namePerson)
-    cy.get(reviewPage.phoneNumber).type(`628` + faker.finance.accountNumber(2))
-    cy.get(reviewPage.affordable).click()
-    cy.get(reviewPage.start4).click()
-    cy.get(reviewPage.date).dblclick().type(date)
-    cy.get(reviewPage.submitButton).click().wait(2000)
-    cy.get(reviewPage.validationError).should('be.visible').and('contain', 'Invalid input')
   })
-  it.skip('Review Product with more than maximum input on Phone Number, should fail #notDeveloped', { retries: 2 }, () => {
-    cy.get(reviewPage.headerPage).should('be.visible').wait(2000)
-    cy.get(reviewPage.fullName).type(namePerson)
-    cy.get(reviewPage.phoneNumber).type(`628` + faker.finance.accountNumber(25))
-    cy.get(reviewPage.affordable).click()
-    cy.get(reviewPage.start4).click()
-    cy.get(reviewPage.date).dblclick().type(date)
-    cy.get(reviewPage.submitButton).click().wait(2000)
-    cy.get(reviewPage.validationError).should('be.visible').and('contain', 'Invalid input')
-  })
+  it.skip(
+    'Review Product with less than minimum input on Phone Number, should fail #notDeveloped',
+    { retries: 2 },
+    () => {
+      cy.get(reviewPage.headerPage).should('be.visible').wait(2000)
+      cy.get(reviewPage.fullName).type(namePerson)
+      cy.get(reviewPage.phoneNumber).type(`628` + faker.finance.accountNumber(2))
+      cy.get(reviewPage.affordable).click()
+      cy.get(reviewPage.start4).click()
+      cy.get(reviewPage.date).dblclick().type(date)
+      cy.get(reviewPage.submitButton).click().wait(2000)
+      cy.get(reviewPage.validationError).should('be.visible').and('contain', 'Invalid input')
+    }
+  )
+  it.skip(
+    'Review Product with more than maximum input on Phone Number, should fail #notDeveloped',
+    { retries: 2 },
+    () => {
+      cy.get(reviewPage.headerPage).should('be.visible').wait(2000)
+      cy.get(reviewPage.fullName).type(namePerson)
+      cy.get(reviewPage.phoneNumber).type(`628` + faker.finance.accountNumber(25))
+      cy.get(reviewPage.affordable).click()
+      cy.get(reviewPage.start4).click()
+      cy.get(reviewPage.date).dblclick().type(date)
+      cy.get(reviewPage.submitButton).click().wait(2000)
+      cy.get(reviewPage.validationError).should('be.visible').and('contain', 'Invalid input')
+    }
+  )
   it.skip('Review Product with future date, should fail #notDeveloped', { retries: 2 }, () => {
-    let currentDate = new Date(new Date().toLocaleDateString());
-    currentDate.setDate(currentDate.getDate() + 1);
-    let tomorrowDate = currentDate.toLocaleDateString();
+    let currentDate = new Date(new Date().toLocaleDateString())
+    currentDate.setDate(currentDate.getDate() + 1)
+    let tomorrowDate = currentDate.toLocaleDateString()
     cy.get(reviewPage.headerPage).should('be.visible').wait(2000)
     cy.get(reviewPage.fullName).type(namePerson)
     cy.get(reviewPage.phoneNumber).type(`628` + faker.finance.accountNumber(25))
@@ -147,9 +155,9 @@ describe('Review Product', () => {
     cy.get(reviewPage.validationError).should('be.visible').and('contain', 'Invalid input')
   })
   it.skip('Review Product with past date, should fail #notDeveloped', { retries: 2 }, () => {
-    let currentDate = new Date(new Date().toLocaleDateString());
-    currentDate.setDate(currentDate.getDate() - 1);
-    let backDate = currentDate.toLocaleDateString();
+    let currentDate = new Date(new Date().toLocaleDateString())
+    currentDate.setDate(currentDate.getDate() - 1)
+    let backDate = currentDate.toLocaleDateString()
     cy.get(reviewPage.headerPage).should('be.visible').wait(2000)
     cy.get(reviewPage.fullName).type(namePerson)
     cy.get(reviewPage.phoneNumber).type(`628` + faker.finance.accountNumber(25))
@@ -162,35 +170,35 @@ describe('Review Product', () => {
   it.skip('Report abuse without violation and comment input, should fail #notDeveloped', { retries: 2 }, () => {
     cy.get(reviewPage.headerPage).should('be.visible').wait(2000)
     cy.xpath(reviewPage.reportAbuse).click().wait(2000)
-    cy.contains("Report Abuse").should('be.visible')
+    cy.contains('Report Abuse').should('be.visible')
     cy.xpath(reviewPage.submitAbuse).click()
-    cy.contains("Your report was submitted.").should('be.visible')
+    cy.contains('Your report was submitted.').should('be.visible')
   })
   it('Report abuse with choosing Phishing on violation, should succeed', { retries: 2 }, () => {
     cy.get(reviewPage.headerPage).should('be.visible').wait(2000)
     cy.xpath(reviewPage.reportAbuse).click().wait(2000)
-    cy.contains("Report Abuse").should('be.visible')
+    cy.contains('Report Abuse').should('be.visible')
     cy.get(reviewPage.phishing).click()
     cy.get(reviewPage.comment).type(faker.lorem.text())
     cy.xpath(reviewPage.submitAbuse).click()
-    cy.contains("Your report was submitted.").should('be.visible')
+    cy.contains('Your report was submitted.').should('be.visible')
     cy.url().should('include', '#View=ReportAbuse')
   })
   it('Report abuse with choosing Copyright infringement on violation, should succeed', { retries: 2 }, () => {
     cy.get(reviewPage.headerPage).should('be.visible').wait(2000)
     cy.xpath(reviewPage.reportAbuse).click().wait(2000)
-    cy.contains("Report Abuse").should('be.visible')
+    cy.contains('Report Abuse').should('be.visible')
     cy.get(reviewPage.contentInfringement).click()
-    cy.contains("Report copyright infringement to Microsoft").should('be.visible')
+    cy.contains('Report copyright infringement to Microsoft').should('be.visible')
   })
   it('Report abuse with choosing other on violation, should succeed', { retries: 2 }, () => {
     cy.get(reviewPage.headerPage).should('be.visible').wait(2000)
     cy.xpath(reviewPage.reportAbuse).click().wait(2000)
-    cy.contains("Report Abuse").should('be.visible')
+    cy.contains('Report Abuse').should('be.visible')
     cy.get(reviewPage.otherabuse).click()
     cy.get(reviewPage.comment).type(faker.lorem.text())
     cy.xpath(reviewPage.submitAbuse).click()
-    cy.contains("Your report was submitted.").should('be.visible')
+    cy.contains('Your report was submitted.').should('be.visible')
     cy.url().should('include', '#View=ReportAbuse')
   })
 })
