@@ -28,28 +28,28 @@
     "template"
   ],
   "devDependencies": {
-    "@faker-js/faker": "^8.0.2",
-    "cypress": "^12.17.4",
+    "@faker-js/faker": "^8.4.1",
+    "cypress": "^13.6.6",
     "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
-    "cypress-mochawesome-reporter": "^3.5.1",
+    "cypress-mochawesome-reporter": "^3.8.1",
     "cypress-plugin-tab": "^1.0.5",
     "cypress-xpath": "^2.0.1",
-    "eslint": "^8.46.0",
-    "eslint-plugin-cypress": "^2.13.3",
+    "eslint": "^8.56.0",
+    "eslint-plugin-cypress": "^2.15.1",
     "faker": "^6.6.6",
-    "husky": "^8.0.3",
+    "husky": "^9.0.11",
     "install": "^0.13.0",
-    "prettier": "3.0.1",
-    "rimraf": "^5.0.1",
-    "webpack": "^5.88.2",
+    "prettier": "3.2.5",
+    "rimraf": "^5.0.5",
+    "webpack": "^5.90.3",
     "webpack-preprocessor": "^0.1.12"
   },
   "dependencies": {
-    "@cypress/webpack-preprocessor": "^5.17.1",
-    "date-fns": "^2.30.0",
+    "@cypress/webpack-preprocessor": "^6.0.1",
+    "date-fns": "^3.3.1",
     "reload": "^3.2.1",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.1"
   },
   "husky": {
     "hooks": {

@@ -1,7 +1,7 @@
 export default {
   headerPage: '#FormTitleId_titleAriaId',
-  fullName: ':nth-child(1) > .-bT-48 > .-a-52 > .-ni-63 > .-_W-62',
-  phoneNumber: ':nth-child(2) > .-bT-48 > .-a-52 > .-ni-63 > .-_W-62',
+  fullName: ':nth-child(1) > .-bU-48 > .-a-52 > .-nl-63 > .-_W-62',
+  phoneNumber: ':nth-child(2) > .-bU-48 > .-a-52 > .-nl-63 > .-_W-62',
   affordable: 'input[value="Affordable"]',
   expensive: 'input[value="Expensive"]',
   other: 'input[name="r8bc17b753f0048ecb03794ef45037bb7"][aria-label="Other answer"]',
@@ -11,5 +11,11 @@ export default {
   validationError: '[data-automation-id="validationError"]',
   errorMessage: '.--Y-240',
   thankYouMessage: '[data-automation-id="thankYouMessage"]',
-  saveBotton: '[data-automation-id="saveAndEditButton"]'
+  saveBotton: '[data-automation-id="saveAndEditButton"]',
+  reportAbuse : '//a[contains(text(),"Report abuse")]',
+  phishing: '#Phishing',
+  contentInfringement : '#ContentInfringement',
+  otherabuse :'#Other',
+  comment : '.-_W-62',
+  submitAbuse : '//button[normalize-space()="Submit"]'
 }
